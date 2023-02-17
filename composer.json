@@ -1,0 +1,19 @@
+{
+    "name": "a/a",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dtanhch116",
+            "email": "dtanhch116@gmail.com"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.2",
+        "illuminate/events": "^10.0",
+        "eftec/bladeone": "^4.8"
+    }
+}

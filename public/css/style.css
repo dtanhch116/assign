@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav-link {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 230px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 0 20px !important;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: orange;
+}
+.table-product{
+    margin-top: 10px;
+}
+.btn-add-product{
+    width: 150px !important;
+    margin-top: 10px;
+}
+.wrap-product{
+    margin-top: 10px !important;
+}
