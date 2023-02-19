@@ -28,11 +28,11 @@ class Product extends BaseModel
         return $this->execute([$id, $ten_sp, $don_gia, $anh_sp, $ngay_nhap, $id_loai]);
     }
 
-    public function edit($id, $ten_sp, $don_gia, $anh_sp, $ngay_nhap, $id_loai, $id_get)
+    public function edit($id, $ten_sp, $don_gia, $anh_sp, $ngay_nhap, $id_loai)
     {
-        $sql = "UPDATE `san_pham` SET `id_sp`=?,`ten_sp`=?,`don_gia`=?,`anh_sp`=?,`ngay_nhap`=?,`id_loai`=? WHERE id_sp = ?";
+        $sql = "UPDATE `san_pham` SET`ten_sp`=?,`don_gia`=?,`anh_sp`=?,`ngay_nhap`=?,`id_loai`=? WHERE id_sp = ?";
         $this->setQuery($sql);
-        return $this->execute([$id, $ten_sp, $don_gia, $anh_sp, $ngay_nhap, $id_loai, $id_get]);
+        return $this->execute([$ten_sp, $don_gia, $anh_sp, $ngay_nhap, $id_loai, $id]);
     }
 
     public function delete($id)

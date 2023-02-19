@@ -1,0 +1,45 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<div class="container-fluid">
+ <a href="<?php echo \htmlentities(url('add_customer')??'', ENT_QUOTES, 'UTF-8', false); ?>" class=""><button class="btn btn-success btn-add-product">Add</button></a>
+ <?php if(isset($_SESSION['success']) && isset($_GET['msg'])): ?>
+ <span style="color:green; font-weight: bold;" class="text-center"><?php echo \htmlentities($_SESSION['success']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <?php endif; ?>
+ <span></span>
+ <table border="1" class="table text-center table-product table-hover">
+ <tr>
+ <th scope="col">id</th>
+ <th>Name</th>
+ <th>Password</th>
+ <th>Email</th>
+ <th>address</th>
+ <th>Avatar</th>
+ <th>Phone Number</th>
+ <th>Role</th>
+ <th>Action</th>
+
+ </tr>
+ <?php $__currentLoopData = $loadAll; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $value): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td><?php echo \htmlentities($value->id_kh??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->ten_kh??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->mat_khau??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->email??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->dia_chi??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+
+ <td>
+ <img src="http://localhost/web17312/assignment/app/views/images/<?php echo \htmlentities($value->avatar??'', ENT_QUOTES, 'UTF-8', false); ?>" width="100" height="100" alt="avatar">
+ </td>
+ <td><?php echo \htmlentities($value->so_dien_thoai??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->vai_tro??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td>
+ <a href="<?php echo \htmlentities(url('edit_customer/'.$value->id_kh)??'', ENT_QUOTES, 'UTF-8', false); ?>"><button class="btn btn-primary">Edit</button></a>
+ <a onclick="return confirm('Bạn có thực sự muốn xóa')" href="<?php echo \htmlentities(url('delete_customer/'.$value->id_kh)??'', ENT_QUOTES, 'UTF-8', false); ?>"><button class="btn btn-danger">Delete</button></a>
+ </td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </table>
+</div>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.main'); } ?>

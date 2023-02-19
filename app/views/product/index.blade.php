@@ -2,15 +2,19 @@
 @section('content')
 <div class="container-fluid">
     <a href="{{url('add_sp')}}" class=""><button class="btn btn-success btn-add-product">Add</button></a>
-    <table border="1" class="table text-center table-product">
+    @if(isset($_SESSION['success']) && isset($_GET['msg']))
+    <span style="color:green; font-weight: bold;" class="text-center">{{$_SESSION['success']}}</span>
+    @endif
+    <span></span>
+    <table border="1" class="table text-center table-product table-hover">
         <tr>
             <th scope="col">id</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Đơn giá</th>
-            <th>Ảnh</th>
-            <th>Ngày Nhập</th>
-            <th>id Loại</th>
-            <th>Hành Động</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Avater</th>
+            <th>Date</th>
+            <th>id cate</th>
+            <th>Action</th>
 
         </tr>
         @foreach($product as $value)

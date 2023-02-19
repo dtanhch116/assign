@@ -14,26 +14,34 @@
 </style>
 
 <body>
-    <h1 class="text-center"><a class="text-decoration-none text-dark" href="{{url('home-page')}}">Quản Lý Website</a></h1>
+    <h1 class="text-center"><a class="text-decoration-none text-dark" href="{{url('home-page')}}">ADMIN</a></h1>
+    <div class="" style="width: 500px;margin-left: 10px;">
+        @if(isset($_SESSION['user']))
+        <span class="bg-success border border-0" style="color: white; height: 36px; display: inline-block; transform: translateY(-4px); border-radius: 6px;">
+            <p style="padding: 0 10px;transform: translateY(5px);">Xin Chào {{$_SESSION['user']}}</p>
+        </span>
+        <a href="{{url('logout')}}"><button class="btn btn-danger">Đăng Xuất</button></a>
+        @endif
+    </div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse" style="justify-content: center;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản lí Loại Hàng</a>
+                        <a class="nav-link" href="{{url('categoris')}}">Categoris</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('quan-li-san-pham')}}">Quản lí sản phẩm</a>
+                        <a class="nav-link" href="{{url('quan-li-san-pham')}}">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Quản lí khách hàng</a>
+                        <a class="nav-link" href="{{url('customer')}}">Customer</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">hihi</a>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="{{url('login')}}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">haha</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
